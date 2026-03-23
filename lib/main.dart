@@ -22,7 +22,7 @@ import 'firebase_options.dart';
 
 
 
-import 'features/home/screen/home_page_screen.dart';
+import 'features/home/screen/home/home_page_screen.dart';
 import 'features/splash/screen/splash_screen.dart';
 
 import 'features/workout/screen/workout.dart';
@@ -57,42 +57,22 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           useInheritedMediaQuery: true,
           home: const StartGate(),
-          onGenerateRoute: (settings) {
-            Widget page;
-
-            if (settings.name == SplashScreen.routName) {
-              page = const SplashScreen();
-            } else if (settings.name == OnboardingScreen.routName) {
-              page = const OnboardingScreen();
-            } else if (settings.name == SignInScreen.routName) {
-              page = const SignInScreen();
-            } else if (settings.name == EnterGymId.routName) {
-              page = const EnterGymId();
-            } else if (settings.name == OtpScreen.routName) {
-              page = const OtpScreen();
-            } else if (settings.name == ForgetPassword.routName) {
-              page = const ForgetPassword();
-            } else if (settings.name == CheckEmail.routName) {
-              page = const CheckEmail();
-            } else if (settings.name == CreateNewPassword.routName) {
-              page = const CreateNewPassword();
-            } else if (settings.name == HomePageScreen.routName) {
-              page = const HomePageScreen();
-            } else if (settings.name == WorkOut.routName) {
-              page = const WorkOut();
-            } else if (settings.name == WorkoutSessionScreen.routName) {
-              page = const WorkoutSessionScreen();
-            } else if (settings.name == WorkoutChest.routName) {
-              page = WorkoutChest();
-            } else if (settings.name == NutritionScreen.routName) {
-              page = NutritionScreen();
-            } else if (settings.name == FoodSearchScreen.routName) {
-              page = const FoodSearchScreen();
-            } else {
-              page = const SplashScreen();
-            }
-
-            return AppTransitions.fadeScale(page);
+          routes: {
+            SplashScreen.routName: (context) => const SplashScreen(),
+            OnboardingScreen.routName: (context) => const OnboardingScreen(),
+            SignInScreen.routName: (context) => const SignInScreen(),
+            EnterGymId.routName: (context) => const EnterGymId(),
+            OtpScreen.routName: (context) => const OtpScreen(),
+            ForgetPassword.routName: (context) => const ForgetPassword(),
+            CheckEmail.routName: (context) => const CheckEmail(),
+            CreateNewPassword.routName: (context) => const CreateNewPassword(),
+            HomePageScreen.routName: (context) => const HomePageScreen(),
+            WorkOut.routName: (context) => const WorkOut(),
+            WorkoutSessionScreen.routName: (context) =>
+            const WorkoutSessionScreen(),
+            WorkoutChest.routName: (context) => WorkoutChest(),
+            // FoodScanScreen.routName: (context) => FoodScanScreen(),
+            FoodSearchScreen.routName: (_) => const FoodSearchScreen(),
           },
         );
       },

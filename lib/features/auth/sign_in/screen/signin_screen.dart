@@ -1,5 +1,5 @@
 import 'package:fitova/core/constants/color.dart';
-import 'package:fitova/features/home/screen/home_page_screen.dart';
+import 'package:fitova/features/home/screen/home/home_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:google_fonts/google_fonts.dart';
